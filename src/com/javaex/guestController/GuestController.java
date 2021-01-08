@@ -48,7 +48,6 @@ public class GuestController extends HttpServlet {
 					RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/deleteForm.jsp");
 					rd.forward(request, response);
 				}else if ("delete1".equals(action)) {
-					response.setContentType("text/html;charset=utf-8");
 					int no=Integer.parseInt(request.getParameter("no"));
 					String password = request.getParameter("password");
 					GuestVo guestVo = new GuestVo(no,password);

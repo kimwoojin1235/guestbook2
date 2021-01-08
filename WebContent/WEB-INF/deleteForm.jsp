@@ -10,11 +10,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="/guestbook2/pbc" method="get">
+	<form action="/guestbook2/pbc" method="post">
 			비밀번호 <input type="text" name="password">
 			<button type="submit">확인</button><br>
 			<input type="hidden" name="no" value=<%=on%>>
 			<input type="hidden" name="action"value="delete1"><br>
+	</form>
 			<a href="/guestbook2/gcr?action=list">메인으로 돌아가기</a>
 </body>
 </html>
