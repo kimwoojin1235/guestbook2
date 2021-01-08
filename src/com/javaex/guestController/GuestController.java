@@ -49,9 +49,9 @@ public class GuestController extends HttpServlet {
 					rd.forward(request, response);
 				}else if ("delete1".equals(action)) {
 					response.setContentType("text/html;charset=utf-8");
-					int Id=Integer.parseInt(request.getParameter("id"));
+					int no=Integer.parseInt(request.getParameter("no"));
 					String password = request.getParameter("password");
-					GuestVo guestVo = new GuestVo(Id,password);
+					GuestVo guestVo = new GuestVo(no,password);
 					GuestDao guestDao = new GuestDao();		
 					int er=guestDao.guestdelete(guestVo);
 					if(er==1) {

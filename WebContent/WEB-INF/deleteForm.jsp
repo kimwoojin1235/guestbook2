@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="/guestbook2/gcr" method="post">
+	<form action="/guestbook2/gcr" method="get">
 			비밀번호 <input type="text" name="password">
 			<button type="submit">확인</button><br>
 			<input type="hidden" name="no" value=<%=on%>>
