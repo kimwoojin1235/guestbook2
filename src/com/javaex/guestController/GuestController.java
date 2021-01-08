@@ -45,7 +45,6 @@ public class GuestController extends HttpServlet {
 					response.sendRedirect("/guestbook2/gcr?action=list");
 				}else if ("delete".equals(action)) {
 					//System.out.println("삭제");
-					int no = Integer.parseInt(request.getParameter("no"));
 					RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/deleteForm.jsp");
 					rd.forward(request, response);
 				}else if ("delete1".equals(action)) {
