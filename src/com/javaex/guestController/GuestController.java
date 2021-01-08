@@ -17,7 +17,7 @@ import com.javaex.dao.GuestDao;
 import com.javaex.vo.GuestVo;
 
 
-@WebServlet("/gcr")
+@WebServlet("/pbc")
 public class GuestController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 				String action = request.getParameter("action");
