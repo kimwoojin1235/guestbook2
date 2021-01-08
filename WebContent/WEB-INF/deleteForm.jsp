@@ -12,9 +12,9 @@
 <body>
 	<form action="/guestbook2/gcr" method="post">
 			비밀번호 <input type="text" name="password">
-			<input type="hidden" name="no" value=<%=on%>>
 			<button type="submit">확인</button><br>
-			action:<input type="text" name="action"value="delete1"><br>
-			<a href="/guestbook2/gcr?action=list"}"">메인으로 돌아가기</a>
+			<input type="hidden" name="no" value=<%=on%>>
+			<input type="hidden" name="action"value="delete1"><br>
+			<a href="/guestbook2/gcr?action=list">메인으로 돌아가기</a>
 </body>
 </html>

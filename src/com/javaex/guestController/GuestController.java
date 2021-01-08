@@ -42,15 +42,22 @@ public class GuestController extends HttpServlet {
 					guDao.guestinsert(guVo);
 					response.sendRedirect("/guestbook2/gcr?action=list");
 				}else if ("delete".equals(action)) {
+					int no =Integer.parseInt(request.getParameter("no"));
 					RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/deleteForm.jsp");
 					rd.forward(request, response);
 				}else if ("delete1".equals(action)) {
+					response.setContentType("text/html;charset=utf-8");
 					int Id=Integer.parseInt(request.getParameter("Id"));
 					String password = request.getParameter("password");
 					GuestVo guestVo = new GuestVo(Id,password);
 					GuestDao guestDao = new GuestDao();		
-					guestDao.guestdelete(guestVo);
+					int er=guestDao.guestdelete(guestVo);
+					if(er==1) {
 					response.sendRedirect("/guestbook2/gcr?action=list");
+					}else if (er==0){
+						RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/passerror.jsp");
+						rd.forward(request, response);
+					}
 				}
 				
 	}

@@ -33,7 +33,7 @@
 				<tr>
 					<td colspan="4"> <button type="submit" >확인</button></td>
 				</tr>
-				1:<input type="text" name="action"value="add"><br>
+				<input type="hidden" name="action"value="add"><br>
 			</table>
 		</form>
 		<br>
