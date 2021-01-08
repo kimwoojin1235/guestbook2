@@ -5,12 +5,7 @@
 <%@ page import="com.javaex.vo.GuestVo"%>
 <%
 
-	List<GuestVo> gList= (List<GuestVo>)request.getAttribute("gList");
-	//컨트롤 에서 포워드한 plist를 꺼내라
-	System.out.println("-----list.jsp------");
-	System.out.println(gList);
-	
-	
+	List<GuestVo> gList= (List<GuestVo>)request.getAttribute("gList");	
 %>   
 <!DOCTYPE html>
 <html>
@@ -19,7 +14,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="/guestbook2/pbc" method="get">
+<form action="/guestbook2/pbc" method="post">
 			<table border="1">
 				<tr>
 					<td>이름</td>
