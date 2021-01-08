@@ -15,6 +15,6 @@
 
 	<br>
 
-	<a href="/guestbook2/gcr?action=delete&no=<%=no%>">뒤로</a>
+	<a href="/guestbook2/pbc?action=delete&no=<%=no%>">뒤로</a>
 </body>
 </html>
