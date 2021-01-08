@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="com.javaex.vo.GuestVo"%>
+    <%
+    int no = Integer.parseInt(request.getParameter("no"));
+    %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +15,6 @@
 
 	<br>
 
-	<a href="/guestbook2/gbc?action=list">메인으로</a>
+	<a href="/guestbook2/gcr?action=delete&no=<%=no%>">뒤로</a>
 </body>
 </html>
