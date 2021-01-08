@@ -22,6 +22,8 @@ public class GuestController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 				String action = request.getParameter("action");
 				System.out.println(action);
+				//한글 깨짐 방지용
+				request.setCharacterEncoding("UTF-8");
 				
 				if("list".equals(action)){
 					//System.out.println("리스트 처리");
