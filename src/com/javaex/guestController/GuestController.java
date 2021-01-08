@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.eclipse.jdt.internal.compiler.env.IBinaryNestedType;
+
 import com.javaex.dao.GuestDao;
 
 import com.javaex.vo.GuestVo;
@@ -41,13 +43,13 @@ public class GuestController extends HttpServlet {
 					GuestDao guDao = new GuestDao();
 					guDao.guestinsert(guVo);
 					response.sendRedirect("/guestbook2/gcr?action=list");
-				}else if ("delete".equals(action)) {
-					int no =Integer.parseInt(request.getParameter("no"));
+				}else if ("delete".equals(action)) {		
+					int no = Integer.parseInt(request.getParameter("no"));
 					RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/deleteForm.jsp");
 					rd.forward(request, response);
 				}else if ("delete1".equals(action)) {
 					response.setContentType("text/html;charset=utf-8");
-					int Id=Integer.parseInt(request.getParameter("Id"));
+					int Id=Integer.parseInt(request.getParameter("id"));
 					String password = request.getParameter("password");
 					GuestVo guestVo = new GuestVo(Id,password);
 					GuestDao guestDao = new GuestDao();		
@@ -62,7 +64,6 @@ public class GuestController extends HttpServlet {
 				
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
 	}
 
 }
