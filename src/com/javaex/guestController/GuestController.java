@@ -24,7 +24,7 @@ public class GuestController extends HttpServlet {
 				System.out.println(action);
 				
 				if("list".equals(action)){
-					System.out.println("리스트 처리");
+					//System.out.println("리스트 처리");
 					GuestDao gDao = new GuestDao();
 					List<GuestVo> gList= gDao.getList();
 
@@ -32,7 +32,7 @@ public class GuestController extends HttpServlet {
 					RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/addList.jsp"); //jsp파일 위치를 알려줌
 					rd.forward(request, response);
 				}else if ("add".equals(action)) {
-					System.out.println("등록폼 처리");
+					//System.out.println("등록폼 처리");
 					request.setCharacterEncoding("utf-8");
 					String name = request.getParameter("name");
 					String password = request.getParameter("password");
@@ -43,7 +43,8 @@ public class GuestController extends HttpServlet {
 					GuestDao guDao = new GuestDao();
 					guDao.guestinsert(guVo);
 					response.sendRedirect("/guestbook2/gcr?action=list");
-				}else if ("delete".equals(action)) {		
+				}else if ("delete".equals(action)) {
+					//System.out.println("삭제");
 					int no = Integer.parseInt(request.getParameter("no"));
 					RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/deleteForm.jsp");
 					rd.forward(request, response);
